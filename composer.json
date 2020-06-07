@@ -1,0 +1,20 @@
+{
+    "name": "root-home/atm",
+    "authors": [
+        {
+            "name": "testatm",
+            "email": "atmtest@guitaresphere.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "src/",
+            "tests"
+        ]
+    },
+    
+    "require-dev": {
+        "phpunit/phpunit": "8"
+    }
+}

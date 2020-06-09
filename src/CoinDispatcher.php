@@ -2,22 +2,7 @@
 
 class CoinDispatcher {
 
-    private $arrValQty = [ 1 => 25,
-        2 => 74,
-        5 => 14,
-        10 => 18,
-        20 => 0,
-        50 => 5,
-        100 => 30,
-        200 => 15,
-        500 => 8,
-        1000 => 11,
-        2000 => 8,
-        5000 => 5,
-        10000 => 2,
-        20000 => 0,
-        50000 => 0
-    ];
+    private $arrValQty = null;
 
     private $currencies ;
     private $qties ;
@@ -26,8 +11,8 @@ class CoinDispatcher {
    /**
      * CoinDispatcher constructor.
      */
-   public function __construct(){
-
+   public function __construct($bankroll){
+      $this->arrValQty = $bankroll;
        $this->currencies = explode(",",implode(",",array_reverse(array_keys($this->arrValQty))));
        $this->qties = explode(",",implode(",",array_reverse($this->arrValQty)));
 

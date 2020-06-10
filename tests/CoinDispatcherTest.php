@@ -132,5 +132,10 @@ final class CoinDispatcherTest extends TestCase
         $cd = new \CoinDispatcher($bankroll);
         $this->assertEquals($cd->getAvailableChange(1.00 ), array(100=>1));
     }
+    public function test_Not_Enough_change() :void{
+        $bankroll = [ 1 => 0, 2 => 0, 5 => 0, 10 => 0, 20 => 0, 50 => 5, 100 => 30, 200 => 15, 500 => 8, 1000 => 11, 2000 => 8, 5000 => 5, 10000 => 2, 20000 => 0, 50000 => 0];
+        $cd = new \CoinDispatcher($bankroll);
+        $this->assertEquals($cd->getAvailableChange(12.12 ), 'Not Enough change');
+    }
 
 }

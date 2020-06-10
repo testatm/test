@@ -67,7 +67,7 @@ class CoinDispatcher {
             }
         }
 
-        return $moneyBack;
+        return $remainder == 0 ? $moneyBack: 'Not Enough change';
     }
    /**
      * Assuming Amount is in Euros ...
